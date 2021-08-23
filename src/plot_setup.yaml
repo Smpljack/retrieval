@@ -1,0 +1,85 @@
+xlims:
+  rh:
+    - 0
+    - 110
+  t:
+    - 180
+    - 305
+  h2o_vmr:
+    - 0.0000001
+    - 0.05
+  log_h2o_vmr:
+    - -1.5
+    - 1.5
+  delta_t:
+    - -17
+    - 17
+  averaging_kernel_h2o_vmr:
+    - -0.3
+    - 1.4
+  averaging_kernel_t:
+    - -0.3
+    - 1.4
+  resolution_h2o_vmr:
+    - 0
+    - 5
+  resolution_t:
+    - 0
+    - 5
+  strength:
+    - -6
+    - 0
+    # - 0.000001
+    # - 0.1
+  pwidth:
+    - 0
+    - 450
+  zwidth:
+    - 0
+    - 10
+  heating_rate_mean:
+    - -2.5
+    - 0
+  heating_rate_min:
+    - -5
+    - 0
+  heating_rate_max:
+    - -2
+    - 2
+  pmean:
+    - 100
+    - 900
+  zmean:
+    - 1
+    - 15
+  heating_rates:
+    - -6
+    - 2
+
+xlabels:
+  h2o_vmr: $VMR_{H_{2}O}$ [-]
+  log_h2o_vmr: $log(VMR_{H_{2}O})$ [-]
+  t: $T$ [K]
+  ts: $T_s$ [K]
+  rh: $RH$ [%]
+  delta_t: $T - T_{true}$ [K]
+  averaging_kernel_h2o_vmr: averaging kernel H$_2$O [-]
+  resolution_h2o_vmr: avg. kernel FWHM H$_2$O [km]
+  averaging_kernel_t: averaging kernel T [-]
+  resolution_t: avg. kernel FWHM T [km]
+  strength: $s_{anom}$ [-]
+  pwidth: $\Delta$p$_{anom}$ [hPa]
+  zwidth: $\Delta$z$_{anom}$ [km]
+  heating_rates: "$Q$ [K day$^{-1}$]"
+  pmean: $p_{anom}$ [hPa]
+  zmean: $z_{anom}$ [km]
+  heating_rate_mean: "mean($Q$) [K day$^{-1}$]"
+  heating_rate_min: "min($Q_{anom}$) [K day$^{-1}$]"
+  heating_rate_max: "max($Q$) [K day$^{-1}$]"
+
+subset_colors:
+#  'true': 'black'
+  'true': '#2ca02c'
+  a_priori: '#1f77b4'
+  retrieved: '#ff7f0e'
+  retrieved-true: 'black'

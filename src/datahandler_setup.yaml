@@ -1,0 +1,140 @@
+moisture_characteristics:
+  p_max: 90000
+  p_min: 10000
+  tropo_p_min: 10000
+  anomaly_p_width_min: 1000
+  anomaly_iwv_strength_min: 0.000001
+
+saved_vars:
+  - a_priori_p
+  - a_priori_z
+  - a_priori_t
+  - a_priori_h2o_vmr
+  - true_t
+  - true_ts
+  - true_h2o_vmr
+  - retrieved_t
+  - retrieved_ts
+  - retrieved_h2o_vmr
+  - a_priori_covariance_h2o_vmr
+  - a_priori_covariance_t
+  - a_priori_ts
+  - a_priori_covariance_y
+  - retrieved_oem_diagnostics
+  - true_heating_rates
+  - retrieved_heating_rates
+  - a_priori_heating_rates
+  - true_ref_heating_rates
+  - retrieved_ref_heating_rates
+  - true_ybatch
+  - retrieved_ybatch
+
+calc_vars:
+  - a_priori_rh
+  - retrieved_rh
+  - true_rh
+  - a_priori_log_h2o_vmr
+  - true_log_h2o_vmr
+  - retrieved_log_h2o_vmr
+  - true_jacobian_h2o_vmr
+  - retrieved_jacobian_h2o_vmr
+  - true_jacobian_t
+  - retrieved_jacobian_t
+  - true_jacobian_ts
+  - retrieved_jacobian_ts
+  - true_averaging_kernel_log_h2o_vmr
+  - retrieved_averaging_kernel_h2o_vmr
+  - true_averaging_kernel_t
+  - retrieved_averaging_kernel_t
+  - eml_ref_h2o_vmr
+  - true_resolution_log_h2o_vmr
+  - true_resolution_t
+
+
+quantity_dependencies:
+  averaging_kernel_log_h2o_vmr:
+    - jacobian_h2o_vmr
+    - covariance_y
+    - covariance_h2o_vmr
+  averaging_kernel_t:
+    - jacobian_t
+    - covariance_y
+    - covariance_t
+  smoothed_h2o_vmr:
+    - averaging_kernel_h2o_vmr
+  smoothed_t:
+    - averaging_kernel_t
+  resolution_log_h2o_vmr:
+    - averaging_kernel_log_h2o_vmr
+  resolution_t:
+    - averaging_kernel_t
+  log_h2o_vmr:
+    - h2o_vmr
+
+quantity_dims:
+  p:
+    - nprofile
+    - zlevel
+  z:
+    - nprofile
+    - zlevel
+  t:
+    - nprofile
+    - zlevel
+  ts:
+    - nprofile
+  h2o_vmr:
+    - nprofile
+    - zlevel
+  log_h2o_vmr:
+    - nprofile
+    - zlevel
+  rh:
+    - nprofile
+    - zlevel
+  eml_ref_h2o_vmr:
+    - nprofile
+    - zlevel
+  jacobian_h2o_vmr:
+    - nprofile
+    - spec_freq
+    - zlevel
+  jacobian_t:
+    - nprofile
+    - spec_freq
+    - zlevel
+  jacobian_ts:
+    - nprofile
+    - spec_freq
+  averaging_kernel_log_h2o_vmr:
+    - nprofile
+    - nrows
+    - ncols
+  averaging_kernel_t:
+    - nprofile
+    - nrows
+    - ncols
+  resolution_log_h2o_vmr:
+    - nprofile
+    - zlevel
+  resolution_t:
+    - nprofile
+    - zlevel
+  covariance_y:
+    - spec_freq
+    - spec_freq
+  covariance_h2o_vmr:
+    - nrows
+    - ncols
+  covariance_t:
+    - nrows
+    - ncols
+  oem_diagnostics:
+    - nprofile
+    - diagn_vars
+  heating_rates:
+    - nprofile
+    - zlevel
+  ybatch:
+    - nprofile
+    - spec_freq
